@@ -1,7 +1,7 @@
-type Color = [number, number, number];
-const ColorArr = ["red", "green", "blue"];
+export type Color = [number, number, number];
+export const ColorArr = ["red", "green", "blue"];
 
-function parseText(inp: string): Record<number, Color[]> {
+export function parseText(inp: string): Record<number, Color[]> {
   const games = inp
     .split("\n")
     .map((game) => game.trim())
@@ -41,7 +41,7 @@ function parseText(inp: string): Record<number, Color[]> {
   return res;
 }
 
-function checkPossibility(color: Color, maxColors: Color) {
+export function checkPossibility(color: Color, maxColors: Color) {
   return color.reduce((acc, cur, idx) => acc && cur <= maxColors[idx], true);
 }
 
@@ -62,15 +62,17 @@ function getPossibility(inp: string, colors: Color) {
   return res;
 }
 
-const inp = Deno.readTextFileSync("inputs/2.txt");
-console.log(getPossibility(inp, [12, 13, 14]));
-// console.log(
-//   getPossibility(
-//     `Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
-// Game 2: 1 blue, 2 green; 3 green, 4 blue, 1 red; 1 green, 1 blue
-// Game 3: 8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red
-// Game 4: 1 green, 3 red, 6 blue; 3 green, 6 red; 3 green, 15 blue, 14 red
-// Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green`,
-//     [12, 13, 14]
-//   )
-// );
+if (import.meta.main) {
+  const inp = Deno.readTextFileSync("inputs/2.txt");
+  console.log(getPossibility(inp, [12, 13, 14]));
+  // console.log(
+  //   getPossibility(
+  //     `Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
+  // Game 2: 1 blue, 2 green; 3 green, 4 blue, 1 red; 1 green, 1 blue
+  // Game 3: 8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red
+  // Game 4: 1 green, 3 red, 6 blue; 3 green, 6 red; 3 green, 15 blue, 14 red
+  // Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green`,
+  //     [12, 13, 14]
+  //   )
+  // );
+}
