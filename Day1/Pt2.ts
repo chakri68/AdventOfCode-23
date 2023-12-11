@@ -1,4 +1,4 @@
-import { readInput } from "../utils.ts";
+import { isDigit, readInput } from "../utils.ts";
 
 const validDigits: Record<string, number> = {
   one: 1,
@@ -41,10 +41,6 @@ function buildTrie(charMap: Record<string, number>): TrieNode {
 //     }
 //   }
 // }
-
-function isDigit(char: string) {
-  return !isNaN(parseInt(char, 10));
-}
 
 function getCalibrationVal(inp: string) {
   const lines = inp.split("\n").map((line) => line.trim());
@@ -187,7 +183,7 @@ function getCalibrationVal(inp: string) {
   return sum;
 }
 
-const inp = readInput("inputs/2.txt");
+const inp = readInput("inputs/1.txt");
 const result = getCalibrationVal(inp);
 // const result = getCalibrationVal(`3cjseventhreen`);
 console.log(result);
