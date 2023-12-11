@@ -1,0 +1,12 @@
+{
+  "name": "AdventOfCode'23",
+  "version": "1.0.0",
+  "description": "My solutions for Advent of code 2023",
+  "repository": "https://github.com/chakri68/AdventOfCode-23.git",
+  "author": "chakri68 <chakridevireddy69@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "day1": "deno run Day1/Pt1.ts && deno run Day1/Pt2.ts"
+  }
+}

@@ -1,4 +1,4 @@
-import { readInput } from "./utils.ts";
+import { readInput } from "../utils.ts";
 
 function getCalibrationVal(string: string): number {
   const lines = string.split("\n");
